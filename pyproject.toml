@@ -1,21 +1,17 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+[tool.uv]
+dev-dependencies = []
 
 [project]
-name = "academic-rag-mcp"
+name = "mcp-retrieval-engine"
 version = "0.1.0"
-description = "Academic RAG MCP Server"
-readme = "README.md"
+description = "A production-ready Model Context Protocol (MCP) server implementing a local RAG pipeline."
 requires-python = ">=3.10"
 dependencies = [
-    "mcp[cli]",
-    "langchain-community",
-    "langchain-huggingface",
-    "chromadb",
-    "sentence-transformers",
-    "pypdf",
+  "fastmcp",
+  "langchain",
+  "langchain-community",
+  "langchain-huggingface",
+  "chromadb",
+  "sentence-transformers",
+  "pypdf",
 ]
-
-[project.scripts]
-academic-rag = "academic_rag_mcp.main:main"
